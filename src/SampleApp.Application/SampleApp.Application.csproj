@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>SampleApp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SampleApp.Domain\SampleApp.Domain.csproj" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="0.5.0" />
+  </ItemGroup>
+
+</Project>
