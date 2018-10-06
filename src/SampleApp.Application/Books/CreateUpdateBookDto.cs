@@ -1,0 +1,23 @@
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using Volo.Abp.AutoMapper;
+
+namespace SampleApp.Books
+{
+    [AutoMapTo(typeof(Book))]
+    public class CreateUpdateBookDto
+    {
+        [Required]
+        [StringLength(128)]
+        public string Name { get; set; }
+
+        [Required]
+        public BookType Type { get; set; } = BookType.Undefined;
+
+        [Required]
+        public DateTime PublishDate { get; set; }
+
+        [Required]
+        public float Price { get; set; }
+    }
+}

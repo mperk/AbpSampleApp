@@ -11,7 +11,7 @@ namespace SampleApp.Permissions
             var myGroup = context.AddGroup(SampleAppPermissions.GroupName);
 
             //Define your own permissions here. Examaple:
-            //myGroup.AddPermission(SampleAppPermissions.MyPermission1, L("Permission:MyPermission1"));
+            myGroup.AddPermission(SampleAppPermissions.UserSearch, L("Permission:UserSearch"));
         }
 
         private static LocalizableString L(string name)

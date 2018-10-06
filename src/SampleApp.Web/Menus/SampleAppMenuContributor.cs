@@ -21,6 +21,10 @@ namespace SampleApp.Menus
             var l = context.ServiceProvider.GetRequiredService<IStringLocalizer<SampleAppResource>>();
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem("SampleApp.Home", l["Menu:Home"], "/"));
+            context.Menu.AddItem(
+                    new ApplicationMenuItem("BooksStore", l["Menu:BooksStore"]).AddItem(
+                            new ApplicationMenuItem("BooksStore.Books", l["Menu:Books"], url: "/Books"))
+                            );
         }
     }
 }

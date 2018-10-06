@@ -7,7 +7,7 @@ namespace SampleApp.Permissions
         public const string GroupName = "SampleApp";
 
         //Add your own permission names. Example:
-        //public const string MyPermission1 = GroupName + ".MyPermission1";
+        public const string UserSearch = GroupName + ".UserSearch";
 
         public static string[] GetAll()
         {

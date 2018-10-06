@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SampleApp.Books;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -10,10 +11,11 @@ namespace SampleApp.EntityFrameworkCore
 {
     public class SampleAppDbContext : AbpDbContext<SampleAppDbContext>
     {
+        public DbSet<Book> Book { get; set; }
+
         public SampleAppDbContext(DbContextOptions<SampleAppDbContext> options)
             : base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
