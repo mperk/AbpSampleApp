@@ -5,6 +5,7 @@ using Volo.Abp.AutoMapper;
 namespace SampleApp.Books
 {
     [AutoMapTo(typeof(Book))]
+    [AutoMapFrom(typeof(BookDto))]
     public class CreateUpdateBookDto
     {
         [Required]
