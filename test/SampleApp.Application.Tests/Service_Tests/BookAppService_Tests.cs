@@ -66,5 +66,22 @@ namespace SampleApp.Service_Tests
 
             exception.ValidationErrors.ShouldContain(x => x.MemberNames.Any(y => y == "Name"));
         }
+
+        [Fact]
+        public async Task Should_Not_Create_A_Book_Without_Price()
+        {
+            var exception = await Assert.ThrowsAsync<AbpValidationException>(async () =>
+            {
+                await _bookAppService.CreateAsync(
+                        new Books.CreateUpdateBookDto
+                        {
+                            Name = "Test Book",
+                            PublishDate = DateTime.Now,
+                            Type = Books.BookType.Biography
+                        }
+                    );
+            });
+            exception.ValidationErrors.ShouldContain(x => x.MemberNames.Any(y => y == "Price"));
+        }
     }
 }

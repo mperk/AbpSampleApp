@@ -6,6 +6,7 @@
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
     "Permission:UserSearch": "User Search",
     "Menu:BooksStore": "Book Store",
-    "Menu:Books": "Books"
+    "Menu:Books": "Books",
+    "Menu:Authors":  "Authors"
   }
 }

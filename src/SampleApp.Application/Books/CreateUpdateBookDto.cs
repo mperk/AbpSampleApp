@@ -20,5 +20,8 @@ namespace SampleApp.Books
 
         [Required]
         public float Price { get; set; }
+
+        public Guid? AuthorId { get; set; }
+
     }
 }

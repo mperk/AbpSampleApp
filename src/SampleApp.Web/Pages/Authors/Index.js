@@ -2,12 +2,12 @@
 
     var l = abp.localization.getResource('BookStore');
 
-    var createModal = new abp.ModalManager(abp.appPath + 'Books/CreateModal');
-    var editModal = new abp.ModalManager(abp.appPath + 'Books/EditModal');
+    var createModal = new abp.ModalManager(abp.appPath + 'Authors/CreateModal');
+    var editModal = new abp.ModalManager(abp.appPath + 'Authors/EditModal');
 
-    var dataTable = $('#BooksTable').DataTable(abp.libs.datatables.normalizeConfiguration({
+    var dataTable = $('#AuthorsTable').DataTable(abp.libs.datatables.normalizeConfiguration({
         order: [[1, "asc"]],
-        ajax: abp.libs.datatables.createAjax(sampleApp.services.book.getList),
+        ajax: abp.libs.datatables.createAjax(sampleApp.services.author.getList),
         columnDefs: [
             {
                 rowAction: {
@@ -22,10 +22,10 @@
                             {
                                 text: l('Delete'),
                                 confirmMessage: function (data) {
-                                    return l('BookDeletionConfirmationMessage', data.record.name);
+                                    return l('AuthorDeletionConfirmationMessage', data.record.name);
                                 },
                                 action: function (data) {
-                                    sampleApp.services.book
+                                    sampleApp.services.author
                                         .delete(data.record.id)
                                         .then(function () {
                                             abp.notify.info(l('SuccessfullyDeleted'));
@@ -37,12 +37,10 @@
                         ]
                 }
             },
-            { data: "name" },
-            { data: "type" },
-            { data: "publishDate" },
-            { data: "price" },
-            { data: "creationTime" },
-            { data: "authorId" }
+            { data: "firstName" }
+            ,
+            { data: "lastName" },
+            { data: "creationTime" }
         ]
     }));
 
@@ -54,7 +52,7 @@
         dataTable.ajax.reload();
     });
 
-    $('#NewBookButton').click(function (e) {
+    $('#NewAuthorButton').click(function (e) {
         e.preventDefault();
         createModal.open();
     });

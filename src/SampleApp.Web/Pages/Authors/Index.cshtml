@@ -1,0 +1,35 @@
+﻿@page
+@inherits SampleApp.Pages.SampleAppPageBase
+@model SampleApp.Pages.Authors.IndexModel
+
+@section scripts
+    {
+    <abp-script src="/Pages/Authors/index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <h2>@L["Authors"]</h2>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewAuthorButton"
+                            text="@L["NewAuthor"].Value"
+                            icon="plus"
+                            button-type="Primary" />
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="AuthorsTable">
+            <thead>
+                <tr>
+                    <th>@L["Actions"]</th>
+                    <th>@L["FirstName"]</th>
+                    <th>@L["LastName"]</th>
+                    <th>@L["CreationTime"]</th>
+                </tr>
+            </thead>
+        </abp-table>
+    </abp-card-body>
+</abp-card>

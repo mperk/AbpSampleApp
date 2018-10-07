@@ -36,4 +36,13 @@
     <PackageReference Include="Volo.Abp.Account.Web" Version="0.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\Authors\CreateModal.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Pages\Authors\EditModal.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

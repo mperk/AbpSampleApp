@@ -13,6 +13,8 @@ namespace SampleApp.EntityFrameworkCore
     {
         public DbSet<Book> Book { get; set; }
 
+        public DbSet<Author> Author { get; set; }
+
         public SampleAppDbContext(DbContextOptions<SampleAppDbContext> options)
             : base(options)
         {

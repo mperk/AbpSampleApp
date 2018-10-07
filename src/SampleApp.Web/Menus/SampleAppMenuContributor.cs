@@ -22,8 +22,9 @@ namespace SampleApp.Menus
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem("SampleApp.Home", l["Menu:Home"], "/"));
             context.Menu.AddItem(
-                    new ApplicationMenuItem("BooksStore", l["Menu:BooksStore"]).AddItem(
-                            new ApplicationMenuItem("BooksStore.Books", l["Menu:Books"], url: "/Books"))
+                    new ApplicationMenuItem("BooksStore", l["Menu:BooksStore"])
+                    .AddItem(new ApplicationMenuItem("BooksStore.Books", l["Menu:Books"], url: "/Books"))
+                    .AddItem(new ApplicationMenuItem("BooksStore.Authors", l["Menu:Authors"], url: "/Authors"))
                             );
         }
     }

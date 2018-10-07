@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SampleApp.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs;
@@ -10,9 +11,10 @@ using Volo.Abp.BackgroundJobs;
 namespace SampleApp.Migrations
 {
     [DbContext(typeof(SampleAppDbContext))]
-    partial class SampleAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181007091522_Create_Author")]
+    partial class Create_Author
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
