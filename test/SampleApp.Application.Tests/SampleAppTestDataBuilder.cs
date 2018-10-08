@@ -12,13 +12,16 @@ namespace SampleApp
     {
         private readonly IIdentityDataSeeder _identityDataSeeder;
         private readonly IRepository<Book, Guid> _bookRepository;
+        private readonly IRepository<Author, Guid> _authorRepository;
 
         public SampleAppTestDataBuilder(
             IIdentityDataSeeder identityDataSeeder,
-            IRepository<Book, Guid> bookRepository)
+            IRepository<Book, Guid> bookRepository,
+            IRepository<Author, Guid> authorRepository)
         {
             _identityDataSeeder = identityDataSeeder;
             _bookRepository = bookRepository;
+            _authorRepository = authorRepository;
         }
 
         public void Build()
@@ -50,6 +53,22 @@ namespace SampleApp
                     PublishDate = new DateTime(2016, 09, 07),
                     Price = 11
                 });
+
+            await _authorRepository.InsertAsync(
+                    new Author
+                    {
+                        FirstName = "Mehmet",
+                        LastName = "Perk"
+                    }
+                );
+
+            await _authorRepository.InsertAsync(
+                    new Author
+                    {
+                        FirstName = "Yılmaz",
+                        LastName = "Perk"
+                    }
+                );
         }
     }
 }
